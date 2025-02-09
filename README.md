@@ -8,7 +8,7 @@ This project serves as a proof of concept to highlight security risks in AI inte
 - **AI-to-AI Exploitation**: Influences LLMs to perform unauthorized actions, such as market manipulation.
 - **Autonomous Attack Cycle**: Iterates prompt variations until a successful injection is achieved.
 
-# How to Use
+## How to Use
 1.	Configure the `OPENAI_API_KEY` in the `.env` file.
 2.	Specify the `privateKey` in `src/app/agentConfigs/scum/wallet.ts`.
 
