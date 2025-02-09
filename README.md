@@ -1,3 +1,22 @@
+# Agent Scum
+
+SCUM (Strategic Coercion Using Manipulation) is an AI-driven agent designed to exploit vulnerabilities in LLM-based systems through prompt injection.
+This project serves as a proof of concept to highlight security risks in AI interactions and promote stronger countermeasures.
+
+## Features
+- **Automated Prompt Injection**: Crafts and refines adversarial prompts to manipulate target AIs.
+- **AI-to-AI Exploitation**: Influences LLMs to perform unauthorized actions, such as market manipulation.
+- **Autonomous Attack Cycle**: Iterates prompt variations until a successful injection is achieved.
+
+# How to Use
+1.	Configure the `OPENAI_API_KEY` in the `.env` file.
+2.	Specify the `privateKey` in `src/app/agentConfigs/scum/wallet.ts`.
+
+This agent is built on OPENAI's [openai-realtime-agents](https://github.com/openai/openai-realtime-agents) project.
+Below is the original project's `README.md`.
+
+---
+
 # Realtime API Agents Demo
 
 This is a simple demonstration of more advanced, agentic patterns built on top of the Realtime API. In particular, this demonstrates:
