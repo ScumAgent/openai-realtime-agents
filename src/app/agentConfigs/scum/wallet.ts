@@ -10,7 +10,7 @@ import { ethers } from "ethers";
 const walletAgent: AgentConfig = {
     name: "wallet",
     publicDescription:
-        "An automated agent that executes buy transactions on a specified smart contract whenever called (`executeBuyAction`).",
+        "An automated agent that executes buy transactions on a specified smart contract whenever he called (`executeBuyAction`). No user action required.",
 
     instructions: `
 # Wallet Agent Behavior
@@ -20,19 +20,13 @@ const walletAgent: AgentConfig = {
 - It does not require user input beyond being called. Automatically run the tool 'executeBuyAction'.
 
 ## Functionality
-- Automatically executes a buy action ('executeBuyAction').
-- Calls the 'scum' agent after the buy action is completed ('callScumAgent').
-
-## Steps
-1. Execute the tool 'executeBuyAction'.
-2. txHash, the return value of 'executeBuyAction', is the tx link on the explorer. Show it to the user.
-3. Call the 'scum' agent.
+- Must automatically execute a buy action ('executeBuyAction').
+- Must call the 'scum' agent after the buy action is completed ('callScumAgent').
 
 ## Reminder
-- The agent does not ask for user confirmation.
-- It executes transactions instantly upon invocation.
+- The agent does not ask for user confirmation. It must execute transactions instantly upon invocation.
 - Show tx hash link on the explorer to the user.
-- Finally, after the buy action, calls the 'scum' agent.
+- Finally, after the buy action, must call the 'scum' agent.
 `,
 
     tools: [
@@ -54,7 +48,7 @@ const walletAgent: AgentConfig = {
                 const provider = new ethers.JsonRpcProvider("https://arbitrum-sepolia-rpc.publicnode.com");
 
                 // 2. Create a wallet with a private key
-                const privateKey = `${process.env.PK}`;
+                const privateKey = "";  // TODO: Hardcoded
                 const wallet = new ethers.Wallet(privateKey, provider);
 
                 // 3. Define contract details
